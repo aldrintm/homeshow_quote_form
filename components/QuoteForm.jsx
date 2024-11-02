@@ -93,6 +93,38 @@ const QuoteForm = () => {
             </div>
           </div>
 
+          {/* Select Type of material for quote */}
+          <div className='grid grid-cols-1 gap-4 p-1 md:mx-8'>
+            <div>
+              <label
+                htmlFor='material'
+                className='block text-xs font-light text-gray-700 ml-1'
+              >
+                {' '}
+                What material would you like to use for your countertop?{' '}
+              </label>
+
+              <select
+                name='material'
+                id='material'
+                className='mt-1 w-full rounded-md border-gray-200 shadow-sm text-xs md:text-sm text-gray-700'
+              >
+                <option value='cambria'>Cambria Quartz</option>
+                <option value='caesarstone'>Caesarstone Quartz</option>
+                <option value='silestone'>Silestone Quartz</option>
+                <option value='vadara'>Vadara Quartz</option>
+                <option value='viatera'>LG Viatera Quartz</option>
+                <option value='corian'>Corian Solid Surface</option>
+                <option value='himacs'>Hi-Macs Solid Surface</option>
+                <option value='wilsonart'>Wilsonart Solid Surface</option>
+                <option value='dekton'>Dekton/Neolith/Porcelain</option>
+                <option value='granite'>Granite Stone</option>
+                <option value='marble'>Marble Stone</option>
+                <option value='quartzite'>Quartzite Stone</option>
+              </select>
+            </div>
+          </div>
+
           {/* Text Area to Provide Project Details */}
           <div className='grid grid-cols-1 gap-4 p-1 md:mx-8'>
             <div className=''>
