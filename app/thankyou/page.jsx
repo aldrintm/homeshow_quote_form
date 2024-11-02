@@ -10,7 +10,6 @@ const ThankYouPage = () => {
         <h3 className='p-4'>
           Please look for an email from us within 24 hours.
         </h3>
-
         <p>In the meantime, please visit our site</p>
 
         <Link href='https://www.plamarusa.com'>

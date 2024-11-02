@@ -1,12 +1,12 @@
 import { Schema, model, models } from 'mongoose'
 
-const UserSchema = new Schema(
+const CustomerSchema = new Schema(
   {
-    first_name: {
+    firstName: {
       type: String,
       required: [true, 'First Name is required'],
     },
-    last_name: {
+    lastName: {
       type: String,
       required: [true, 'Last Name is required'],
     },
@@ -23,6 +23,9 @@ const UserSchema = new Schema(
     material: {
       type: String,
     },
+    promo: {
+      type: String,
+    },
     message: {
       type: String,
     },
@@ -37,6 +40,6 @@ const UserSchema = new Schema(
   }
 )
 
-const User = models.User || model('User', UserSchema)
+const Customer = models.Customer || model('Customer', CustomerSchema)
 
-export default User
+export default Customer
