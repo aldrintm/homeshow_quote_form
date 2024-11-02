@@ -34,6 +34,7 @@ const QuoteForm = () => {
               </label>
               <input
                 type='text'
+                id='firstName'
                 name='firstName'
                 required
                 placeholder='First Name ...'
@@ -49,8 +50,9 @@ const QuoteForm = () => {
                 Last Name
               </label>
               <input
-                type='tel'
+                type='text'
                 id='lastName'
+                name='lastName'
                 required
                 placeholder='Last name ...'
                 className='mt-1 w-full rounded-md border-gray-200 shadow-sm text-xs md:text-sm'
@@ -62,7 +64,7 @@ const QuoteForm = () => {
           <div className='grid md:grid-cols-2 gap-4 p-1 md:mx-8 mb-1'>
             <div className=''>
               <label
-                htmlFor='firstName'
+                htmlFor='email'
                 className='block text-xs font-light text-gray-700 ml-1'
               >
                 Email
@@ -70,6 +72,7 @@ const QuoteForm = () => {
               <input
                 type='text'
                 id='email'
+                name='email'
                 required
                 placeholder='name@email.com'
                 className='mt-1 w-full rounded-md border-gray-200 shadow-sm text-xs md:text-sm'
@@ -78,7 +81,7 @@ const QuoteForm = () => {
 
             <div className=''>
               <label
-                htmlFor='lastName'
+                htmlFor='phone'
                 className='block text-xs font-light text-gray-700 ml-1'
               >
                 Phone
@@ -86,6 +89,7 @@ const QuoteForm = () => {
               <input
                 type='tel'
                 id='lastName'
+                name='phone'
                 required
                 placeholder='(415) 333 1111'
                 className='mt-1 w-full rounded-md border-gray-200 shadow-sm text-xs md:text-sm'
@@ -129,12 +133,13 @@ const QuoteForm = () => {
           <div className='grid grid-cols-1 gap-4 p-1 md:mx-8'>
             <div className=''>
               <label
-                htmlFor='firstName'
+                htmlFor='message'
                 className='block text-xs font-light text-gray-700 ml-1'
               >
                 Some Details About Your Project
               </label>
               <textarea
+                id='message'
                 name='message'
                 required
                 placeholder='Give us a quick note about your project ...'
