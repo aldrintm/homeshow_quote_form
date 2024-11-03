@@ -164,6 +164,7 @@ const QuoteForm = () => {
                   id='message'
                   name='message'
                   placeholder='Give us a quick note about your project ...'
+                  required
                   rows='3'
                   className='mt-1 w-full rounded-md border-gray-200 shadow-sm text-xs md:text-sm'
                 />
@@ -186,6 +187,7 @@ const QuoteForm = () => {
                   className='mt-1 w-full border-gray-200 text-xs md:text-sm'
                   accept='image/*'
                   multiple
+                  required
                 />
               </div>
             </div>

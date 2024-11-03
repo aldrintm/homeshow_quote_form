@@ -12,12 +12,10 @@ const CustomerSchema = new Schema(
     },
     email: {
       type: String,
-      unique: [true, 'Email already exists'],
       required: [true, 'Email is required'],
     },
     phone: {
       type: String,
-      unique: [true, 'Phone already exist'],
       required: [true, 'Phone is required'],
     },
     material: {
