@@ -22,7 +22,7 @@ const ErrorPage = ({ error }) => {
               href='/quote'
               className='bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 px-6 rounded'
             >
-              Go Home
+              Fill in the Form
             </Link>
           </div>
         </div>

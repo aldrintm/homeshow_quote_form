@@ -5,6 +5,7 @@ import cloudinary from '@/config/cloudinary'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
+
 // this action is added to the form to perform tasks
 async function addCustomer(formData) {
   // connect to DB
@@ -23,7 +24,6 @@ async function addCustomer(formData) {
     promo: formData.get('promo'),
     message: formData.get('message'),
   }
-  console.log(customerData)
 
   // lets workout all our TOBESAVED images here
   const imageUrls = []
@@ -54,7 +54,6 @@ async function addCustomer(formData) {
   customerData.images = imageUrls
 
   // lets check the server to see all items uploaded to the DB
-  console.log(customerData)
 
   // lets plug all the date using the property model
   const newCustomer = new Customer(customerData)

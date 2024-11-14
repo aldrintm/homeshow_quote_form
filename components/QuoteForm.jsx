@@ -1,9 +1,27 @@
+'use client'
+
+import { useTransition } from 'react'
 import addCustomer from '@/app/actions/addCustomer'
+import Spinner from '@/components/Spinner'
 
 const QuoteForm = () => {
+  const data = async (formData) => {
+    console.log(data)
+
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+  }
+
+  const [isPending, startTransition] = useTransition()
+
+  const handleSubmit = (formData) => {
+    startTransition(async () => {
+      await addCustomer(formData)
+    })
+  }
+
   return (
     <section className='bg-white mx-auto px-2 h-screen'>
-      <form action={addCustomer}>
+      <form action={handleSubmit}>
         <div className='bg-white md:container max-w-4xl mx-auto text-left mt-20 px-15 rounded-2xl'>
           <div className='mx-auto text-center pt-4 pb-4 text-2xl md:text-4xl text-blue-500 font-bold'>
             Let's Get you a Quote
@@ -186,39 +204,41 @@ const QuoteForm = () => {
                   name='images'
                   className='mt-1 w-full border-gray-200 text-xs md:text-sm'
                   accept='image/*'
-                  multiple
-                  required
                 />
               </div>
             </div>
 
             {/* Button */}
             <div className='grid grid-cols-1 gap-4 p-1 py-2 md:mx-8'>
-              <div className='text-center'>
-                <button
-                  type='submit'
-                  className='inline-flex w-full md:max-w-sm items-center gap-2 rounded-lg border border-blue-600 bg-blue-600 px-8 py-3 text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500'
-                >
-                  <span className='text-sm font-medium text-center mx-auto'>
-                    Send for a quote
-                  </span>
-
-                  <svg
-                    className='size-5 rtl:rotate-180'
-                    xmlns='http://www.w3.org/2000/svg'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    stroke='currentColor'
+              {isPending ? (
+                <Spinner />
+              ) : (
+                <div className='text-center'>
+                  <button
+                    type='submit'
+                    disabled={isPending}
+                    className='inline-flex w-full md:max-w-sm items-center gap-2 rounded-lg border border-blue-600 bg-blue-600 px-8 py-3 text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500'
                   >
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth='2'
-                      d='M17 8l4 4m0 0l-4 4m4-4H3'
-                    />
-                  </svg>
-                </button>
-              </div>
+                    <span className='text-sm font-medium text-center mx-auto'>
+                      Send for a quote
+                    </span>
+                    <svg
+                      className='size-5 rtl:rotate-180'
+                      xmlns='http://www.w3.org/2000/svg'
+                      fill='none'
+                      viewBox='0 0 24 24'
+                      stroke='currentColor'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth='2'
+                        d='M17 8l4 4m0 0l-4 4m4-4H3'
+                      />
+                    </svg>
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
